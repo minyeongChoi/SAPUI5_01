@@ -1,0 +1,56 @@
+<mvc:View
+    controllerName="iitp.zui500221126.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+
+					<content>
+                        <Table items="{/aSkill}" headerText="aSkill" 
+                                mode="SingleSelectMaster" selectionChange="onSelectionChange">
+                            <columns>
+                                <Column><header><Text text="sId"  /></header></Column>
+                                <Column><header><Text text="sName" /></header></Column>
+                                <Column><header><Text text="grade" /></header></Column>
+                            </columns>
+
+                            <items>
+                                <!-- <ColumnListItem press="onSkillClick" type="Active"> -->
+                                    <!-- 이벤트 테이블 아래 걸음 -->
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{sId}"/>
+                                        <Text text="{sName}"/>
+                                        <Text text="{grade}"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                                   <!-- path: 데이터가 찾아가는 경로 -->
+                        <!-- <Table items="{ path: '/aSkill/0/aEmp'}" headerText="Employee"> 
+                                /가 없다?:메인이 아니고 감싼 다른 것이 있다/어딘가에 포함되어 있다) -->
+                        <Table id="idTableEmp" items="{aEmp}" headerText="Employee">
+                            <columns>
+                                <Column><header><Text text="Employee Id"  /></header></Column>
+                                <Column><header><Text text="Employee Name" /></header></Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{eId}"/>
+                                        <Text text="{eName}"/>
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
